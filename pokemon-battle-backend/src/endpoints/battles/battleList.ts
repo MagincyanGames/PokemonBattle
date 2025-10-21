@@ -9,14 +9,6 @@ export class BattleList extends OpenAPIRoute {
     summary: "List Battles",
     request: {
       query: z.object({
-        page: Num({
-          description: "Page number",
-          default: 0,
-        }),
-        isCompleted: Bool({
-          description: "Filter by completed flag",
-          required: false,
-        }),
       }),
     },
     responses: {
@@ -43,7 +35,6 @@ export class BattleList extends OpenAPIRoute {
     const data = await this.getValidatedData<typeof this.schema>();
 
     // Retrieve the validated parameters
-    const { page, isCompleted } = data.query;
 
     // Implement your own object list here
 

@@ -1,8 +1,16 @@
+import { v4 as uuid } from "uuid";
 import { AppContext } from "../types";
-import { BattleType } from "../types/battles";
+import { BattleCreateType, BattleType } from "../types/battles";
 
 export class BattleService {
   battleList: BattleType[] = [];
+
+  public Create(battle: BattleCreateType) {
+    let genBattle: BattleType = {
+      ...battle,
+      guid: uuid()
+    }
+  }
 
   public Push(battle: BattleType) {
     this.battleList.push(battle);
