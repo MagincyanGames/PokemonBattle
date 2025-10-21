@@ -49,7 +49,7 @@ export class BattleList extends OpenAPIRoute {
 
     return {
       success: true,
-      battles: c.env.battles,
+      battles: [], //! Utilizar el servicio
     };
   }
 }
