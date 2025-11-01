@@ -6,15 +6,15 @@ import { v4 as uuid } from "uuid";
 import { Battle, BattleCreateDTO, BattleType } from "../../types/battles";
 import { BattleService } from "../../services/battleService";
 
-export class BattleCreate extends OpenAPIRoute {
+export class PlayerRegister extends OpenAPIRoute {
   schema = {
-    tags: ["Battles"],
+    tags: ["Players"],
     summary: "Create a new Battle",
     request: {
       body: {
         content: {
           "application/json": {
-            schema: BattleCreateDTO,
+            schema: BattleCreateDTO, // TODO cambiar el esquema de entrada
           },
         },
       },
@@ -28,7 +28,7 @@ export class BattleCreate extends OpenAPIRoute {
               series: z.object({
                 success: Bool(),
                 result: z.object({
-                  battle: Battle,
+                  battle: Battle, // TODO cambiar el esquema de salida
                 }),
               }),
             }),
