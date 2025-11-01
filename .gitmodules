@@ -1,0 +1,3 @@
+[submodule "pokemon-battle-frontend"]
+	path = pokemon-battle-frontend
+	url = https://github.com/MagincyanGames/PokemonBattleFrontend.git
