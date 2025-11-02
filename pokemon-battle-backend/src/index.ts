@@ -4,9 +4,11 @@ import { BattleCreate } from "./endpoints/battles/battleCreate";
 import { TaskDelete } from "./endpoints/taskDelete";
 import { TaskFetch } from "./endpoints/taskFetch";
 import { BattleList } from "./endpoints/battles/battleList";
+import { cors } from "hono/cors";
 
 // Start a Hono app
 const app = new Hono<{ Bindings: Env }>();
+app.use("*", cors());
 
 // Setup OpenAPI registry
 const openapi = fromHono(app, {
